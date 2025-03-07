@@ -1,0 +1,38 @@
+.scroller {
+  max-width: 100%;
+
+  &[data-animated="true"] {
+    overflow: hidden;
+  }
+
+  &[data-animated="true"] .scroller__inner {
+    display: flex;
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll 20s ease infinite;
+
+    @include hover {
+      animation-play-state: paused;
+    }
+
+    @include tablet {
+      animation-duration: 30s;
+    }
+
+    @include mobile {
+      animation-duration: 40s;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

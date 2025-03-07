@@ -1,0 +1,137 @@
+.testimonials {
+  --testimonialsCardCorenerWidth: 43px;
+  --testimonialsCardOffestLeft: 50px;
+  --testimonialsSlideWidth: 606px;
+  @include desktop {
+    --testimonialsSlideWidth: 404px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding-block: 70px;
+
+    row-gap: 120px;
+
+    border-radius: var(--border-radius-large);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    @include tablet {
+      padding-top: 30px;
+      padding-bottom: 60px;
+      row-gap: 60px;
+    }
+  }
+
+  &__swiper {
+    overflow: hidden;
+    @include tablet {
+      padding-inline: 30px;
+    }
+
+    .swiper-slide {
+      width: var(--testimonialsSlideWidth);
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__border {
+    position: relative;
+    padding: 50px;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--border-radius-large);
+    @include mobile {
+      padding: 30px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 97%;
+
+      @include mobile {
+        top: 98%;
+      }
+      left: var(--testimonialsCardOffestLeft);
+      width: var(--testimonialsCardCorenerWidth);
+      height: var(--testimonialsCardCorenerWidth);
+      border: inherit;
+      background-color: var(--color-dark);
+      transform: rotate(45deg) translateY(-50%);
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+  }
+
+  &__author {
+    padding-left: calc(
+      var(--testimonialsCardOffestLeft) + var(--testimonialsCardCorenerWidth) /
+        2
+    );
+  }
+
+  &__name {
+    color: var(--color-accent);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    column-gap: 190px;
+
+    @include tablet {
+      column-gap: 100px;
+    }
+
+    @include mobile {
+      column-gap: 30px;
+    }
+  }
+
+  &__arrow--next {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    color: var(--color-gray-alt);
+  }
+
+  &__arrow--prev {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    transform: rotate(180deg);
+    color: var(--color-gray-alt);
+  }
+
+  &__arrow--next,
+  &__arrow--prev {
+    @include hover {
+      color: var(--color-light);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__pagination-dot {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    color: var(--color-light);
+    &--active {
+      color: var(--color-accent);
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.contacts {
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    padding-inline: 100px;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    @include mobile {
+      padding-inline: 30px;
+      padding-block: 50px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 62px;
+      right: -325px;
+      width: 700px;
+      height: 650px;
+
+      background-image: url(../../images/contacts-images/contacts-Illustration.svg);
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+
+      @include mobile {
+        background-image: none;
+        display: none;
+      }
+    }
+  }
+  &__form {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    width: 50%;
+
+    @include tablet {
+      width: 70%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__input {
+    border: var(--border);
+    border-radius: var(--border-radius-small);
+    padding-block: 18px;
+    padding-inline: 30px;
+  }
+
+  &__contact-format {
+    position: relative;
+    display: flex;
+    column-gap: 35px;
+
+    @include mobile {
+      column-gap: 60px;
+      justify-content: center;
+    }
+  }
+
+  &__input-radio {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:checked + .contacts__format-label::after {
+      opacity: 1;
+    }
+  }
+
+  &__format-label {
+    position: relative;
+    @include fluid-text(18, 16);
+    font-weight: 400;
+    padding-left: 42px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: 0;
+      display: block;
+      border-radius: 100%;
+      width: 28px;
+      height: 28px;
+      border: var(--border);
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      transition: opacity var(--transition-duration) ease;
+      opacity: 0;
+      top: 3px;
+      left: 6px;
+      display: block;
+      border-radius: 100%;
+      width: 16px;
+      height: 16px;
+      background-color: var(--color-accent);
+      z-index: 2;
+    }
+  }
+
+  &__textarea {
+    @extend .contacts__input;
+    resize: none;
+    height: 200px;
+
+    @include mobile {
+      height: 130px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+  }
+}

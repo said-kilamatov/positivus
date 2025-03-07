@@ -1,0 +1,81 @@
+.team {
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__button {
+    cursor: pointer;
+    align-self: end;
+    padding-inline: 75px;
+    padding-block: 20px;
+    transition: all var(--transition-duration) ease;
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  &__list {
+    --gap: 40px;
+    --offsets: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+
+    @include desktop {
+      --offsets: 1;
+    }
+    @include mobile {
+      --offsets: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    row-gap: 30px;
+    width: calc((100% - var(--gap) * 3) / (var(--offsets) + 1));
+    border: 1px solid var(--color-dark);
+    box-shadow: 0 5px 0 var(--color-dark);
+    border-radius: var(--border-radius-large);
+    padding-inline: 40px;
+    padding-block: 35px;
+  }
+
+  &__top-container {
+    display: flex;
+    align-items: end;
+    column-gap: 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 34px;
+      height: 34px;
+      top: 0;
+      right: 0;
+      position: absolute;
+      background-image: url(../../images/team-images/linkedin.svg);
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-dark);
+  }
+
+  &__name {
+    @include fluid-text(18, 16);
+    text-wrap: 500;
+  }
+
+  &__job {
+  }
+}

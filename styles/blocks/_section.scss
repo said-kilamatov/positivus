@@ -1,0 +1,52 @@
+.section {
+  &__title {
+    font-weight: 500;
+
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius-small);
+    padding-inline: 7px;
+
+    &--processes {
+      white-space: nowrap;
+      @include mobile {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__paragraph {
+    @include fluid-text(18, 16);
+    width: 47%;
+    font-weight: 400;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include mobile {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--section-padding-y);
+
+    @include mobile {
+      row-gap: var(--section-mobile-padding-y);
+    }
+  }
+}

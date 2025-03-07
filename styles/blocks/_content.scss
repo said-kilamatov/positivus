@@ -1,0 +1,10 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 140px;
+  overflow: hidden;
+
+  @include mobile {
+    row-gap: 60px;
+  }
+}
