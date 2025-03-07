@@ -180,14 +180,14 @@ svg * {
   */
 @font-face {
   font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-Regular.woff2") format("woff2"), url("fonts/SpaceGrotesk-Regular.woff") format("woff");
+  src: url("/fonts/SpaceGrotesk-Regular.woff2") format("woff2"), url("/fonts/SpaceGrotesk-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-Medium.woff2") format("woff2"), url("fonts/SpaceGrotesk-Medium.woff2") format("woff");
+  src: url("/fonts/SpaceGrotesk-Medium.woff2") format("woff2"), url("/fonts/SpaceGrotesk-Medium.woff2") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -1073,7 +1073,7 @@ h4 {
   height: 41px;
   background-color: var(--color-accent);
   border-radius: 100%;
-  -webkit-mask-image: url(images/arrow.svg);
+  -webkit-mask-image: url(/images/arrow.svg);
   -webkit-mask-size: auto;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -1185,7 +1185,7 @@ h4 {
   top: 0;
   right: 0;
   position: absolute;
-  background-image: url(../../images/team-images/linkedin.svg);
+  background-image: url(/images/team-images/linkedin.svg);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
