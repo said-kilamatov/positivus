@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -69,9 +70,9 @@
         <button
           class="header__burger-button burger-button visible-mobile"
           type="button">
-          <div class="header__burger-button--line"></div>
-          <div class="header__burger-button--line"></div>
-          <div class="header__burger-button--line"></div>
+          <span class="header__burger-button--line"></span>
+          <span class="header__burger-button--line"></span>
+          <span class="header__burger-button--line"></span>
           <span class="visually-hidden">Toggle navigation menu</span>
         </button>
       </div>
@@ -720,7 +721,9 @@
                 </div>
               </li>
             </ul>
-            <div type="button" class="team__button button">See all team</div>
+            <button type="button" class="team__button button">
+              See all team
+            </button>
           </div>
         </div>
       </section>
@@ -1123,11 +1126,7 @@
               </a>
             </div>
             <form class="footer__form">
-              <input
-                type="email"
-                class="footer__input"
-                id="email"
-                placeholder="Email" />
+              <input type="email" class="footer__input" placeholder="Email" />
               <button type="submit" class="button footer__button">
                 Subscribe to news
               </button>
